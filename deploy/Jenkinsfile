@@ -29,7 +29,7 @@ pipeline {
 
     stage('Run Ansible playbook') {
         steps {
-           ansiblePlaybook become: true, colorized: true, credentialsId: 'my_private_key', disableHostKeyChecking: true, installation: 'Ansible-Jenkins', inventory: 'inventory/dev.yml', playbook: 'playbook/site.yml'
+           ansiblePlaybook become: true, colorized: true, credentialsId: 'my_private_key', disableHostKeyChecking: true, installation: 'Ansible-Jenkins', inventory: 'inventory/dev.yml', playbook: 'playbooks/site.yml'
          }
       }
 
