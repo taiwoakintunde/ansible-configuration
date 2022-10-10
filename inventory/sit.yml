@@ -4,12 +4,13 @@
 [todo]
 <SIT-Todo-Web-Server-Private-IP-Address>
 
-[nginx]
-<SIT-Nginx-Private-IP-Address>
-
 [db:vars]
 ansible_user=ec2-user
 ansible_python_interpreter=/usr/bin/python
 
+[nginx]
+172.31.21.110 ansible_ssh_user='ec2-user'
+
+
 [db]
-<SIT-DB-Server-Private-IP-Address>
+172.31.19.153 ansible_ssh_user='ubuntu'
