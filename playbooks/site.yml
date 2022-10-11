@@ -1,5 +1,5 @@
 ---
-- name: import common file
+- name: artifactory
   import_playbook: ../static-assignments/artifactory.yml
   tags:
     - always
