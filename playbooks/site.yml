@@ -1,8 +1,8 @@
 ---
 - name: artifactory
   import_playbook: ../static-assignments/artifactory.yml
-  tags:
-    - always
+  # tags:
+  #   - always
 
 # - name: include env-vars file
 #   import_playbook: ../dynamic-assignments/env-vars.yml
