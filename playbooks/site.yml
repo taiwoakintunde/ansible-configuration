@@ -9,14 +9,14 @@
 #   tags:
 #     - always
 
-- name: import database file
-  import_playbook: ../static-assignments/database.yml
+# - name: import database file
+#   import_playbook: ../static-assignments/database.yml
 
-- name: import deployment file
-  import_playbook: ../static-assignments/deployment.yml
+# - name: import deployment file
+#   import_playbook: ../static-assignments/deployment.yml
 
-# - name: import webservers file
-#   import_playbook: ../static-assignments/webservers.yml
+- name: import sonarqube file
+  import_playbook: ../static-assignments/sonarqube.yml
 
 # - name: import Loadbalancers assignment
 #   import_playbook: ../static-assignments/nginx.yml
