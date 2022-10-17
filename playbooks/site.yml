@@ -15,8 +15,8 @@
 # - name: import deployment file
 #   import_playbook: ../static-assignments/deployment.yml
 
-- name: import sonarqube file
-  import_playbook: ../static-assignments/sonarqube.yml
+# - name: import sonarqube file
+#   import_playbook: ../static-assignments/sonarqube.yml
 
 # - name: import Loadbalancers assignment
 #   import_playbook: ../static-assignments/nginx.yml
@@ -34,9 +34,9 @@
 #   tags:
 #     - always
 
-# - hosts: webservers
-# - name: Webserver assignment
-#   import_playbook: ../static-assignments/webservers.yml
+- hosts: webservers
+- name: Webserver assignment
+  import_playbook: ../static-assignments/webservers.yml
 
 # ---
 # - hosts: all
