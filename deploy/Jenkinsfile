@@ -1,13 +1,43 @@
 pipeline {
-    agent any
+  agent any
+  
+    environment {
+    ANSIBLE_CONFIG="${WORKSPACE}/deploy/ansible.cfg"
+  }
 
-  stages {
-    stage("Build") {
+  stages{
+    stage("Initial cleanup") {
       steps {
-        script {
-          sh 'echo "Building Stage"'
+        dir("${WORKSPACE}") {
+          deleteDir()
         }
       }
     }
+  
+    stage(" Checkout SCM") {
+      steps {
+        git branch: 'main', url: 'https://github.com/oayanda/ansible-configuration.git'
+      }
     }
+
+    stage("Prepare Ansible For Execution") {
+      steps {
+        sh 'echo ${WORKSPACE}' 
+        sh 'sed -i "3 a roles_path=${WORKSPACE}/roles" ${WORKSPACE}/deploy/ansible.cfg' 
+      }
+    }
+
+    stage('Run Ansible playbook') {
+        steps {
+           ansiblePlaybook become: true, colorized: true, disableHostKeyChecking: true, installation: 'Ansible-play', inventory: 'inventory/dev', playbook: 'playbooks/site.yml'
+         }
+      }
+
+    stage('Clean Workspace after build'){
+        steps{
+          cleanWs()
+        }
+      }
+ }
+
 }
