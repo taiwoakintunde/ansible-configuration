@@ -3,8 +3,7 @@
   import_playbook: ../static-assignments/artifactory.yml
   tags:
     - always
-
-  - name: import deployment file
+- name: import deployment file
   import_playbook: ../static-assignments/deployment.yml
 
 # - name: include env-vars file
