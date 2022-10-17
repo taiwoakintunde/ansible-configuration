@@ -9,20 +9,16 @@
 #   tags:
 #     - always
 
-# - name: import database file
-#   import_playbook: ../static-assignments/database.yml
+- name: import database file
+  import_playbook: ../static-assignments/database.yml
 
-# - name: import deployment file
-#   import_playbook: ../static-assignments/deployment.yml
-
-# - name: import sonarqube file
-#   import_playbook: ../static-assignments/sonarqube.yml
-
-# - name: import Loadbalancers assignment
-#   import_playbook: ../static-assignments/nginx.yml
-#   when: load_balancer_is_required
+- name: import Loadbalancers assignment
+  import_playbook: ../static-assignments/nginx.yml
+  when: load_balancer_is_required
 
 
+- name: Tooling assignment
+  import_playbook: ../static-assignments/webservers.yml
 
 # Used for include
 # ---
@@ -34,10 +30,6 @@
 #   tags:
 #     - always
 
-- hosts: webservers
-- name: Webserver assignment
-  import_playbook: ../static-assignments/webservers.yml
-
 # ---
 # - hosts: all
 # # import_playbook is a Ansible module.
@@ -45,3 +37,9 @@
 
 # - hosts: uat-webservers
 # - import_playbook: ../static-assignments/uat-webservers.yml
+
+# - name: import deployment file
+#   import_playbook: ../static-assignments/deployment.yml
+
+# - name: import sonarqube file
+#   import_playbook: ../static-assignments/sonarqube.yml
