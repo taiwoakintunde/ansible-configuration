@@ -1,11 +1,11 @@
----
-- name: import sonarqube file
-  import_playbook: ../static-assignments/sonarqube.yml
+# ---
+# - name: import sonarqube file
+#   import_playbook: ../static-assignments/sonarqube.yml
 
-# - name: artifactory
-#   import_playbook: ../static-assignments/artifactory.yml
-#   tags:
-#     - always
+- name: artifactory
+  import_playbook: ../static-assignments/artifactory.yml
+  tags:
+    - always
 # - name: import deployment file
 #   import_playbook: ../static-assignments/deployment.yml
 
