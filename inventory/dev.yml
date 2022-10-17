@@ -1,5 +1,5 @@
-# [todo]
-# <Private IP Address> ansible_ssh_user='ec2-user'
+[todo]
+172.31.95.148 ansible_ssh_user='ec2-user'
 
 # [db:vars]
 # ansible_user=ec2-user

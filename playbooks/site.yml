@@ -1,8 +1,11 @@
 ---
 - name: artifactory
   import_playbook: ../static-assignments/artifactory.yml
-  # tags:
-  #   - always
+  tags:
+    - always
+
+  - name: import deployment file
+  import_playbook: ../static-assignments/deployment.yml
 
 # - name: include env-vars file
 #   import_playbook: ../dynamic-assignments/env-vars.yml
@@ -19,26 +22,9 @@
 # - name: Tooling assignment
 #   import_playbook: ../static-assignments/webservers.yml
 
-# Used for include
-# ---
-# - hosts: all
-# - name: Include dynamic variables
-#   tasks:
-#   import_playbook: ../static-assignments/common.yml
-#   include: ../dynamic-assignments/env-vars.yml
-#   tags:
-#     - always
 
-# ---
-# - hosts: all
-# # import_playbook is a Ansible module.
-# - import_playbook: ../static-assignments/common-del.yml
 
-# - hosts: uat-webservers
-# - import_playbook: ../static-assignments/uat-webservers.yml
 
-# - name: import deployment file
-#   import_playbook: ../static-assignments/deployment.yml
 
 # - name: import sonarqube file
 #   import_playbook: ../static-assignments/sonarqube.yml
