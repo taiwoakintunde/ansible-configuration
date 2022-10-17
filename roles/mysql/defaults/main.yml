@@ -112,12 +112,19 @@ mysql_databases:
     encoding: utf8
     replicate: 1
 
-# Databases Two.
+# Databases Todo.
 mysql_databases:
   - name: homestead
     collation: utf8_general_ci
     encoding: utf8
     replicate: 1
+
+    # Users.
+mysql_users:
+   - name: homestead
+     host: 172.31.21.151
+     password: sePret^i
+     priv: '*.*:ALL,GRANT'
 
 # Users.
 mysql_users:
@@ -126,12 +133,7 @@ mysql_users:
      password: password
      priv: '*.*:ALL,GRANT'
 
-# Users.
-mysql_users:
-   - name: homestead
-     host: 172.31.22.34
-     password: sePret^i
-     priv: '*.*:ALL,GRANT'
+
 
 mysql_disable_log_bin: false
 
